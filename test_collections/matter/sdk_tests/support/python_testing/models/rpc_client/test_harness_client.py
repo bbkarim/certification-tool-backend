@@ -23,7 +23,7 @@ import sys
 from contextlib import redirect_stdout
 from multiprocessing.managers import BaseManager
 
-from matter.testing.commissioning import CommissionDeviceTest
+from matter.testing.commissioning import commission_devices
 from matter.testing.matter_testing import MatterTestConfig
 from matter.testing.runner import (
     TestStep,
@@ -263,7 +263,7 @@ def run_test(script_path: str, class_name: str, config: MatterTestConfig) -> Non
 
 def commission(config: MatterTestConfig) -> None:
     config.commission_only = True
-    run_tests(CommissionDeviceTest, config, None)
+    run_tests(commission_devices, config, None)
 
 
 def _process_test_pairs(
