@@ -13,7 +13,8 @@
  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  # See the License for the specific language governing permissions and
  # limitations under the License.
-FROM ubuntu:22.04
+ARG UBUNTU_BASE_IMAGE=ubuntu:22.04
+FROM ${UBUNTU_BASE_IMAGE}
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1

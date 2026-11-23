@@ -22,6 +22,7 @@ cd $ROOT_DIR
 
 DEFAULT_IMAGE=csa-certification-tool-backend
 
+UBUNTU_BASE_IMAGE=${UBUNTU_BASE_IMAGE:22.04}
 
 GHCR_ORG="ghcr.io"
 ORG=${DOCKER_BUILD_ORG:-project-chip}
@@ -77,7 +78,7 @@ set -ex
 
 [[ -n $VERSION ]] || die "version cannot be empty"
 
-BUILD_ARGS=()
+BUILD_ARGS=(--build-arg UBUNTU_BASE_IMAGE="$UBUNTU_BASE_IMAGE")
 if [[ ${*/--no-cache//} != "${*}" ]]; then
     BUILD_ARGS+=(--no-cache)
 fi
