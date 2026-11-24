@@ -98,7 +98,7 @@ then
     # Checkout SDK sparsely 
     cd /tmp
     rm -rf $TMP_SDK_PATH
-    git clone --filter=blob:none --no-checkout --depth 1 --sparse https://github.com/project-chip/connectedhomeip.git $TMP_SDK_FOLDER
+    git clone --filter=blob:none --no-checkout --depth 1 -b bbkarim_v1.6-branch --sparse https://github.com/bbkarim/connectedhomeip.git $TMP_SDK_FOLDER
     cd $TMP_SDK_FOLDER
     git sparse-checkout init
     git sparse-checkout set $SDK_YAML_PATH $SDK_SCRIPTS_PATH $SDK_ADAPTER_PATH $SDK_DATA_MODEL_PATH $SDK_PYTHON_SCRIPT_PATH $SDK_PYTHON_DATA_MODEL_PATH
